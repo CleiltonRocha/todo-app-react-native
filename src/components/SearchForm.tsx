@@ -12,7 +12,7 @@ export function SearchForm() {
         className="flex-1 bg-slate-900 border border-slate-800 p-4 text-base rounded-md placeholder-gray-500 text-slate-100"
       />
       <TouchableOpacity className="p-4 bg-indigo-500 rounded-md w-16 items-center justify-center">
-       <Icons.MagnifyingGlassIcon color={colors.slate[100]}/> 
+        <Icons.MagnifyingGlassIcon color={colors.slate[100]}/> 
       </TouchableOpacity>
     </View>
   )
