@@ -12,6 +12,7 @@ type TaskStore = {
   removeTask: (taskId: string) => void,
   completeTask: (taskId: string) => void,
   unCompleteTask: (taskId: string) => void,
+  filterTasks(search: string): void 
 }
 
 const useTaskStore = create<TaskStore>((set) => ({
@@ -38,6 +39,13 @@ const useTaskStore = create<TaskStore>((set) => ({
       tasks: state.tasks.map((task) =>
         task.id === taskId ? { ...task, concluded: false } : task
       ),
+    })
+  ),
+  filterTasks: (search: string) => 
+    set((state) => ({
+      tasks: state.tasks.filter((task) =>
+        task.description.toLowerCase().includes(search.toLowerCase())
+      )
     })
   ),
 }));

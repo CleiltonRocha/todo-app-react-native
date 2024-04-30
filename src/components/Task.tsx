@@ -11,7 +11,7 @@ export function Task({id, description, concluded}: TaskProps) {
 
   function handleRemoveTask(taskId: string) {
 
-    Alert.alert("Remover Tarefa", `Deseja apagar esta tarefa?`, [
+    Alert.alert("Remover Tarefa", `Deseja remover esta tarefa?`, [
       {
         text: "Cancelar"
       },
@@ -32,7 +32,7 @@ export function Task({id, description, concluded}: TaskProps) {
           text: "Cancelar"
         },
         {
-          text: "Remover",
+          text: "Sim",
           onPress: () => taskStore.unCompleteTask(taskId)
         }
       ])
