@@ -25,11 +25,10 @@ export function NewTaskButton() {
 
   function handleAddtask() {
     const newTask: TaskProps = {
-      id: String(taskStore.tasks.length == 0 ? "1" : Number(taskStore.tasks[taskStore.tasks.length - 1]) + 1), 
-      description: taskDescription, 
+      id: String(Date.now()), 
+      description: taskDescription.trim(), 
       concluded: false
     }
-    console.log('Opa, Adicionei')
     taskStore.addTask(newTask);
     bottomSheetModalRef.current?.close();
   }

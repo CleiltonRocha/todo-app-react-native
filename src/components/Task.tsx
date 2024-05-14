@@ -44,7 +44,7 @@ export function Task({id, description, concluded}: TaskProps) {
   }
 
   return (
-    <View className="flex-row bg-slate-900 p-5 rounded-lg items-center justify-between ">
+    <View className={`flex-row ${concluded ? 'bg-green-300/10' : 'bg-slate-900'}  p-5 rounded-lg items-center justify-between`}>
       {
         concluded ? (
           <IconsSolid.CheckCircleIcon width={24} height={24} color={colors.green[300]} onPress={() => toggleCompleteTask(id)}/>
@@ -56,7 +56,7 @@ export function Task({id, description, concluded}: TaskProps) {
         )
       }
       
-      <Text className="text-sm font-body text-slate-400 flex-1 ml-2 mr-2">{description}</Text>
+      <Text className={`text-sm font-body text-slate-400 flex-1 ml-2 mr-2 ${concluded ? 'line-through' : ''}`}>{description}</Text>
       <TouchableOpacity onPress={() => handleRemoveTask(id)}>
         <Icons.TrashIcon width={24} height={24} color={colors.red[300]}/>
       </TouchableOpacity>

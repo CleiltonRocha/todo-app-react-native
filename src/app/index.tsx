@@ -1,6 +1,6 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import {View} from "react-native"
+import {KeyboardAvoidingView, Platform, View} from "react-native"
 
 import { Header } from "../components/Header";
 import { SearchForm } from "../components/SearchForm";
@@ -39,13 +39,13 @@ export default function Home() {
         backgroundColor="#6366F1"
       />
       <GestureHandlerRootView className="flex-1">
-        <View className="flex-1 bg-slate-950 relative">
-          <Header />
-          <SearchForm />
-          <TaskOverview />
-          <TaskList />
-          <NewTaskButton />
-        </View>
+          <View className="flex-1 bg-slate-950 relative">
+            <Header />
+            <SearchForm />
+            <TaskOverview />
+            <TaskList />
+            <NewTaskButton />
+          </View>
       </GestureHandlerRootView>
     </>
   )

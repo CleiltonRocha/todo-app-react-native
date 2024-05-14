@@ -2,6 +2,7 @@ import React from "react";
 import { FlatList } from "react-native";
 import { Task } from "./Task";
 import useTaskStore from "../stores/TaskStore";
+import { EmptyState } from "./EmptyState";
 
 export function TaskList() {
   const taskStore = useTaskStore();
@@ -11,6 +12,7 @@ export function TaskList() {
     <FlatList 
       data={tasks}
       keyExtractor={item => item.id}
+      ListEmptyComponent={EmptyState}
       renderItem={({ item }) => (
         <Task key={item.id} id={item.id} description={item.description} concluded={item.concluded}/>
       )}
