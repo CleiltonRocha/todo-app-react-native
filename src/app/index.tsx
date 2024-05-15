@@ -16,7 +16,7 @@ import {
 } from "@expo-google-fonts/inter"
 import { Loading } from "../components/Loading";
 import { TaskList } from "../components/TaskList";
-import { NewTaskButton } from "../components/NewTaskButton";
+import { NewTaskBottomSheet } from "../components/NewTaskBottomSheet";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export default function Home() {
@@ -44,7 +44,7 @@ export default function Home() {
             <SearchForm />
             <TaskOverview />
             <TaskList />
-            <NewTaskButton />
+            <NewTaskBottomSheet />
           </View>
       </GestureHandlerRootView>
     </>

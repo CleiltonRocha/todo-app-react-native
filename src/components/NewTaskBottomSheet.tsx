@@ -7,7 +7,7 @@ import { useRef, useMemo, useCallback, useState } from "react";
 
 import useTaskStore, { TaskProps } from '@/src/stores/TaskStore';
 
-export function NewTaskButton() {
+export function NewTaskBottomSheet() {
 
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
   const taskStore = useTaskStore();
